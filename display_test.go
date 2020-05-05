@@ -73,7 +73,7 @@ func TestDisplay_Tile(t *testing.T) {
 	})
 
 	// Now try with tiling disabled
-	dev, disp = getDisplay(scrollphathd.WithTiling(false))
+	dev, disp = getDisplay(WithTiling(false))
 	disp.SetPixel(0, 0, 1)
 	disp.SetPixel(1, 1, 2)
 	disp.SetPixel(2, 2, 3)
@@ -135,9 +135,9 @@ func (d *testDevice) SetBrightness(brightness byte) {}
 func (d *testDevice) Clear() error                  { return nil }
 func (d *testDevice) Show() error                   { return nil }
 
-func getDisplay(opts ...scrollphathd.DisplayOption) (*testDevice, *scrollphathd.Display) {
+func getDisplay(opts ...DisplayOption) (*testDevice, *Display) {
 	dev := &testDevice{}
-	return dev, scrollphathd.NewWithDevice(dev, opts...)
+	return dev, NewWithDevice(dev, opts...)
 }
 
 func (d *testDevice) checkPixels(t *testing.T, expected [][]byte) {
