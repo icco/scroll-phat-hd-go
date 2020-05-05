@@ -6,7 +6,6 @@ import (
 
 	"periph.io/x/periph/conn"
 	"periph.io/x/periph/conn/i2c"
-	"periph.io/x/periph/devices"
 )
 
 // NewDriver returns a new Scroll pHAT HD hardware driver. This implements the Device
@@ -264,6 +263,3 @@ func (s *Driver) write(cmd byte, value ...byte) error {
 func (s *Driver) Halt() error {
 	return s.writeRegister(regShutdown, 0)
 }
-
-// Ensure the device actually implements the periph.io interface.
-var _ devices.Device = &Driver{}

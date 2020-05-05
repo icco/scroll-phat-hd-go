@@ -1,9 +1,7 @@
-package scrollphathd_test
+package scrollphathd
 
 import (
 	"testing"
-
-	"github.com/tomnz/scroll-phat-hd-go"
 )
 
 func TestDisplay_Basic(t *testing.T) {
