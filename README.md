@@ -1,7 +1,7 @@
 # Scroll pHAT HD Go library
 
-[![build](https://travis-ci.org/tomnz/scroll-phat-hd-go.svg?branch=master)](https://travis-ci.org/tomnz/scroll-phat-hd-go)
-[![godocs](https://godoc.org/github.com/tomnz/scroll-phat-hd-go?status.svg)](https://godoc.org/github.com/tomnz/scroll-phat-hd-go)
+[![build](https://travis-ci.org/icco/scroll-phat-hd-go.svg?branch=master)](https://travis-ci.org/icco/scroll-phat-hd-go)
+[![godocs](https://godoc.org/github.com/icco/scroll-phat-hd-go?status.svg)](https://godoc.org/github.com/icco/scroll-phat-hd-go)
 
 Provides a Go implementation for interfacing with Pimoroni's [Scroll pHAT HD](https://shop.pimoroni.com/products/scroll-phat-hd). The top-level library provides a lot of the same functionality as the reference [Python library](http://docs.pimoroni.com/scrollphathd/), including:
 
@@ -23,28 +23,6 @@ There are two primary ways that the library allows you to interact with the devi
 
 `Driver` abstracts the low-level I2C hardware device, and handles all communication. This does include some basic drawing functionality such as `SetPixel`, `SetBrightness`, and support for rotation. It's possible to use the `Driver` directly in your projects - this can be particularly useful in performance-critical situations where you want to incur minimum overhead in memory usage and copying.
 
-## Projects
-
-Some example projects that take advantage of this library:
-
-* [sparklestick](https://github.com/tomnz/sparklestick)
-
-## Installation
-
-First, clone the project into your GOPATH:
-
-```bash
-go get github.com/tomnz/scroll-phat-hd-go
-```
-
-The library depends on the [periph.io](https://periph.io) framework for low level device communication. You can install this manually with `go get`, or (preferred) use `dep`:
-
-```bash
-go get -u github.com/golang/dep/cmd/dep
-cd $GOPATH/src/github.com/tomnz/scroll-phat-hd-go
-dep ensure
-```
-
 ## Usage
 
 First, initialize a periph.io I2C bus, and instantiate the display with it:
@@ -53,7 +31,7 @@ First, initialize a periph.io I2C bus, and instantiate the display with it:
 package main
 
 import (
-    "github.com/tomnz/scroll-phat-hd-go"
+    "github.com/icco/scroll-phat-hd-go"
     "periph.io/x/periph/conn/i2c/i2creg"
     "periph.io/x/periph/host"
 )
@@ -74,8 +52,8 @@ display.Fill(0, 0, 5, 5, 255)
 display.Show()
 ```
 
-Please refer to the [godocs](https://godoc.org/github.com/tomnz/scroll-phat-hd-go) for full API reference.
+Please refer to the [godocs](https://godoc.org/github.com/icco/scroll-phat-hd-go) for full API reference.
 
 ## Contributing
 
-Contributions welcome! Please refer to the [contributing guide](https://github.com/tomnz/scroll-phat-hd-go/blob/master/CONTRIBUTING.md).
+Contributions welcome! Please refer to the [contributing guide](https://github.com/icco/scroll-phat-hd-go/blob/master/CONTRIBUTING.md).
